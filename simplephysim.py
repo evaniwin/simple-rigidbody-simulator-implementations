@@ -24,19 +24,19 @@ def phycollision(pos, dom, vel):
     if pos[0] > dom[0]:
         vel[0] = -1*vel[0]
         forcenil()
-        force[0] = -.1
+        force[0] = -RECOIL
     elif pos[0] < 0:
         vel[0] = -1*vel[0]
         forcenil()
-        force[0] = .1
+        force[0] = RECOIL
     if pos[1] > dom[1]:
         vel[1] = -1*vel[1]
         forcenil()
-        force[1] = -.1
+        force[1] = RECOIL
     elif pos[1] < 0:
         vel[1] = -1*vel[1]
         forcenil()
-        force[1] = .1
+        force[1] = -RECOIL
     return vel
 
 
@@ -57,6 +57,7 @@ def solve(pos, vel, dom, drag):
 # Pygame Configuration
 pygame.init()
 STEP = 10
+RECOIL = 1
 fps = 30
 global force
 force = [0, 0]
